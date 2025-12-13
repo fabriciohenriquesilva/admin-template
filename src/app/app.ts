@@ -17,13 +17,13 @@ export class App {
     }
 
     menuItems: MenuItem[] = [
-        {id: 1, label: 'Dashboard', icon: 'ph ph-house', active: true},
-        {id: 2, label: 'Team', icon: 'ph ph-users-three'},
-        {id: 3, label: 'Analytics', icon: 'ph ph-chart-line'},
-        {id: 4, label: 'Documents', icon: 'ph ph-files'},
-        {id: 5, label: 'Calendar', icon: 'ph ph-calendar'},
-        {id: 6, label: 'Messages', icon: 'ph ph-chat'},
-        {id: 7, label: 'Settings', icon: 'ph ph-gear'},
+        {id: 1, label: 'Dashboard', path: '', icon: 'ph ph-house', active: true},
+        {id: 2, label: 'Team', path: '', icon: 'ph ph-users-three'},
+        {id: 3, label: 'Analytics', path: '', icon: 'ph ph-chart-line'},
+        {id: 4, label: 'Documents', path: '', icon: 'ph ph-files'},
+        {id: 5, label: 'Calendar', path: '', icon: 'ph ph-calendar'},
+        {id: 6, label: 'Messages', path: '', icon: 'ph ph-chat'},
+        {id: 7, label: 'Settings', path: '', icon: 'ph ph-gear'},
     ];
 }
 
@@ -32,4 +32,5 @@ interface MenuItem {
     label: string;
     icon: string;
     active?: boolean;
+    path: string;
 }
