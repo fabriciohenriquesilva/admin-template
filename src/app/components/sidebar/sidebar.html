@@ -1,0 +1,66 @@
+<aside
+    class="bg-stone-100 border-r border-stone-300 transition-all duration-300 ease-in-out flex flex-col"
+    [class.w-64]="!isCollapsed()"
+    [class.w-18]="isCollapsed()">
+
+    <div class="flex p-4 items-center justify-between border-b-1 border-stone-300 ml-2">
+
+        <h1 class="text-2xl font-bold text-gray-800 transition-opacity duration-300 overflow-hidden"
+            [class.w-auto]="!isCollapsed()"
+            [class.w-0]="isCollapsed()"
+        >Application</h1>
+
+        <button
+            class="rounded-sm w-8 h-8 bg-stone-200 hover:bg-stone-300 hover:cursor-pointer transition-colors"
+            [class.ml-auto]="!isCollapsed()"
+            [class.m-auto]="isCollapsed()"
+            (click)="toggleMenu()">
+            <i class="text-2xl block ph"
+               [class.ph-caret-left]="!isCollapsed()"
+               [class.ph-caret-right]="isCollapsed()"
+            ></i>
+        </button>
+    </div>
+
+    <nav class="flex-1 p-4 overflow-y-auto">
+        <ul class="space-y-2 mt-4">
+            @for (item of menuItems; track item.id) {
+                <li class="flex items-center gap-4 pt-2 pb-2 pl-2 rounded-lg hover:cursor-pointer hover:bg-stone-300 transition-colors">
+                    <i class="text-2xl block {{item.icon}}"
+                    ></i>
+                    <a href="#" class="text-gray-800 transition-colors overflow-hidden"
+                       [class.w-auto]="!isCollapsed()"
+                       [class.w-0]="isCollapsed()"
+                    >{{ item.label }}</a>
+                </li>
+            }
+        </ul>
+    </nav>
+
+    <div class="p-3 border-t-1 border-stone-300">
+        <div class="flex justify-between items-center gap-4 pt-2 pb-2 rounded-lg hover:bg-stone-100 transition-colors">
+
+            <img src="https://picsum.photos/200/200?random=1"
+                 alt="Profile photo"
+                 class="w-12 h-12 block rounded-full object-cover"
+            />
+
+            <div class="flex flex-1 flex-col leading-tight overflow-hidden">
+                    <span class="text-sm font-semibold text-stone-800">
+                        Nome
+                    </span>
+                <span class="text-xs text-stone-600">
+                        email@email.com
+                    </span>
+            </div>
+
+            <button
+                class="rounded-sm w-8 h-8 bg-stone-200 hover:bg-stone-300 hover:cursor-pointer transition-colors overflow-hidden">
+                <i class="ph ph-sign-out text-lg"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</aside>
