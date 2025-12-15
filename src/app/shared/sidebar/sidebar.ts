@@ -1,4 +1,5 @@
 import {Component, signal} from '@angular/core';
+import {RouterLink} from '@angular/router';
 
 interface MenuItem {
     id: number;
@@ -10,9 +11,12 @@ interface MenuItem {
 
 @Component({
   selector: 'sidebar',
-  imports: [],
+    imports: [
+        RouterLink
+    ],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
+    standalone: true
 })
 export class Sidebar {
 
@@ -24,7 +28,7 @@ export class Sidebar {
 
     menuItems: MenuItem[] = [
         {id: 1, label: 'Dashboard', path: '', icon: 'ph ph-house', active: true},
-        {id: 2, label: 'Team', path: '', icon: 'ph ph-users-three'},
+        {id: 2, label: 'Team', path: 'team', icon: 'ph ph-users-three'},
         {id: 3, label: 'Analytics', path: '', icon: 'ph ph-chart-line'},
         {id: 4, label: 'Documents', path: '', icon: 'ph ph-files'},
         {id: 5, label: 'Calendar', path: '', icon: 'ph ph-calendar'},

@@ -28,7 +28,7 @@
                 <li class="flex items-center gap-4 pt-2 pb-2 pl-2 rounded-lg hover:cursor-pointer hover:bg-stone-300 transition-colors">
                     <i class="text-2xl block {{item.icon}}"
                     ></i>
-                    <a href="#" class="text-gray-800 transition-colors overflow-hidden"
+                    <a [routerLink]="item.path" class="text-gray-800 transition-colors overflow-hidden"
                        [class.w-auto]="!isCollapsed()"
                        [class.w-0]="isCollapsed()"
                     >{{ item.label }}</a>
