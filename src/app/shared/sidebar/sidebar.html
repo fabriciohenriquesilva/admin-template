@@ -25,13 +25,17 @@
     <nav class="flex-1 p-4 overflow-y-auto">
         <ul class="space-y-2 mt-4">
             @for (item of menuItems; track item.id) {
-                <li class="flex items-center gap-4 pt-2 pb-2 pl-2 rounded-lg hover:cursor-pointer hover:bg-stone-300 transition-colors">
+                <li class="flex items-center gap-4 pt-2 pb-2 pl-2 rounded-lg hover:cursor-pointer hover:bg-stone-300 transition-colors"
+                    [routerLink]="item.path">
+
                     <i class="text-2xl block {{item.icon}}"
                     ></i>
-                    <a [routerLink]="item.path" class="text-gray-800 transition-colors overflow-hidden"
+
+                    <a class="text-gray-800 transition-colors overflow-hidden"
                        [class.w-auto]="!isCollapsed()"
                        [class.w-0]="isCollapsed()"
                     >{{ item.label }}</a>
+
                 </li>
             }
         </ul>
