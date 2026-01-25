@@ -20,7 +20,7 @@
     <div>
         <p-table [columns]="cols"
                  stripedRows
-                 [value]="products"
+                 [value]="teamList"
                  [paginator]="true"
                  [rows]="10"
                  [tableStyle]="{ 'min-width': '50rem' }">
@@ -34,14 +34,14 @@
                     <th scope="col" style="background: var(--color-gray-100)">Actions</th>
                 </tr>
             </ng-template>
-            <ng-template #body let-product>
+            <ng-template #body let-team>
                 <tr>
-                    <td>{{ product?.id }}</td>
-                    <td class="font-bold">{{ product?.name }}</td>
-                    <td>{{ product?.category }}</td>
-                    <td class="text-right">{{ product?.quantity }}</td>
+                    <td>{{ team?.id }}</td>
+                    <td class="font-bold">{{ team?.name }}</td>
+                    <td>{{ team?.category }}</td>
+                    <td class="text-right">{{ team?.quantity }}</td>
                     <td class="text-right">
-                        <p-tag [rounded]="true" [value]="product?.status" [severity]="getSeverity(product.status)"></p-tag>
+                        <p-tag [rounded]="true" [value]="team?.status" [severity]="getSeverity(team.status)"></p-tag>
                     </td>
                     <td>
                         <button
