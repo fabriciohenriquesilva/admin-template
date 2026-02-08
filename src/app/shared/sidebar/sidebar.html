@@ -1,19 +1,20 @@
 <aside
-    class="bg-stone-100 border-r border-stone-300 transition-all duration-300 ease-in-out flex flex-col"
+    class="bg-gray-100 border-r border-gray-300 transition-all duration-300 ease-in-out flex flex-col"
     [class.w-64]="!isCollapsed()"
     [class.w-18]="isCollapsed()">
 
-    <div class="flex p-4 items-center justify-between border-b-1 border-stone-300 ml-2">
+    <div class="flex py-4 items-center justify-between border-b-1 border-gray-300">
 
         <h1 class="text-2xl font-bold text-gray-800 transition-opacity duration-300 overflow-hidden"
             [class.w-auto]="!isCollapsed()"
+            [class.pl-4]="!isCollapsed()"
             [class.w-0]="isCollapsed()"
         >Application</h1>
 
         <button
-            class="rounded-sm w-8 h-8 bg-stone-200 hover:bg-stone-300 hover:cursor-pointer transition-colors"
-            [class.ml-auto]="!isCollapsed()"
-            [class.m-auto]="isCollapsed()"
+            class="rounded-sm w-8 h-8 block border border-gray-300 bg-gray-200 hover:bg-gray-300 hover:cursor-pointer transition-colors"
+            [class.mr-3]="!isCollapsed()"
+            [class.mx-auto]="isCollapsed()"
             (click)="toggleMenu()">
             <i class="text-2xl block ph"
                [class.ph-caret-left]="!isCollapsed()"
@@ -25,7 +26,7 @@
     <nav class="flex-1 p-4 overflow-y-auto">
         <ul class="space-y-2 mt-4">
             @for (item of menuItems; track item.id) {
-                <li class="flex items-center gap-4 pt-2 pb-2 pl-2 rounded-lg hover:cursor-pointer hover:bg-stone-300 transition-colors"
+                <li class="flex items-center gap-4 pt-2 pb-2 pl-2 rounded-lg hover:cursor-pointer hover:bg-gray-300 transition-colors"
                     [routerLink]="item.path">
 
                     <i class="text-2xl block {{item.icon}}"
@@ -41,8 +42,8 @@
         </ul>
     </nav>
 
-    <div class="p-3 border-t-1 border-stone-300">
-        <div class="flex justify-between items-center gap-4 pt-2 pb-2 rounded-lg hover:bg-stone-100 transition-colors">
+    <div class="p-3 border-t-1 border-gray-300">
+        <div class="flex justify-between items-center gap-4 pt-2 pb-2 rounded-lg hover:bg-gray-100 transition-colors">
 
             <img src="https://picsum.photos/200/200?random=1"
                  alt="Profile photo"
@@ -50,17 +51,17 @@
             />
 
             <div class="flex flex-1 flex-col leading-tight overflow-hidden">
-                    <span class="text-sm font-semibold text-stone-800">
+                    <span class="text-sm font-semibold text-gray-800">
                         Nome
                     </span>
-                <span class="text-xs text-stone-600">
+                <span class="text-xs text-gray-600">
                         email@email.com
                     </span>
             </div>
 
             <button
-                class="rounded-sm w-8 h-8 bg-stone-200 hover:bg-stone-300 hover:cursor-pointer transition-colors overflow-hidden">
-                <i class="ph ph-sign-out text-lg"></i>
+                class="rounded-sm w-8 h-8 border border-gray-300 bg-gray-200 hover:bg-gray-300 hover:cursor-pointer transition-colors overflow-hidden">
+                <i class="ph ph-sign-out text-xl"></i>
             </button>
 
         </div>

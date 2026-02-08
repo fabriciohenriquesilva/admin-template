@@ -2,14 +2,16 @@
 
     <!-- Header -->
     <div class="flex justify-between items-center text-grey-800">
-        <h1 class="text-4xl font-medium">Teams</h1>
-        <button class="py-1 px-2 font-medium bg-blue-600 text-blue-50 rounded-sm hover:cursor-pointer hover:bg-blue-700">
-            + New Team
+        <h1 class="text-4xl font-medium text-gray-800">Listagem de Teams</h1>
+        <button
+            class="py-1 px-2 font-medium bg-blue-600 text-blue-50 rounded-sm hover:cursor-pointer hover:bg-blue-700"
+            [routerLink]="['/team/create']">
+            <i class="ph ph-plus"></i> Novo
         </button>
     </div>
 
     <!-- Toolbar Actions -->
-    <div>
+    <div class="text-gray-700">
         Toolbar
         <!-- Messages -->
         <!-- Filters -->
@@ -17,7 +19,40 @@
 
     <!-- Content -->
     <div>
-        Content
+        <p-table [columns]="cols"
+                 stripedRows
+                 [value]="teamList"
+                 [paginator]="true"
+                 [rows]="10"
+                 [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template #header let-columns>
+                <tr>
+                    <th scope="col" class="!text-right" [width]="150" style="background: var(--color-gray-100)">Code</th>
+                    <th scope="col" style="background: var(--color-gray-100)">Name</th>
+                    <th scope="col" [width]="300" style="background: var(--color-gray-100)">Category</th>
+                    <th scope="col" [width]="180" class="!text-right" style="background: var(--color-gray-100)">Quantity</th>
+                    <th scope="col" [width]="200" class="!text-center" style="background: var(--color-gray-100)">Status</th>
+                    <th scope="col" class="!text-center" [width]="150" style="background: var(--color-gray-100)">Actions</th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-team>
+                <tr>
+                    <td class="!text-right">{{ team?.id }}</td>
+                    <td class="font-bold">{{ team?.name }}</td>
+                    <td>{{ team?.category }}</td>
+                    <td class="!text-right">{{ team?.quantity }}</td>
+                    <td class="!text-center">
+                        <p-tag [rounded]="true" [value]="team?.status" [severity]="getSeverity(team.status)"></p-tag>
+                    </td>
+                    <td class="!text-center">
+                        <button
+                            class="font-bold text-xl hover:cursor-pointer">
+                            <i class="ph ph-eye align-middle"></i>
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
     </div>
 
 </div>

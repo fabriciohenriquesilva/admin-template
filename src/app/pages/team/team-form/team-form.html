@@ -1,0 +1,36 @@
+<div class="pt-8 px-8">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center text-grey-800">
+        <h1 class="text-4xl font-medium text-gray-800">Cadastro de Teams</h1>
+        <button
+            class="py-1 px-2 font-medium bg-white border border-gray-300 text-gray-800 rounded-sm hover:cursor-pointer hover:bg-gray-100"
+            [routerLink]="['/team']">
+            <i class="ph ph-arrow-circle-left text-xl align-sub"></i> Voltar
+        </button>
+    </div>
+
+    <!-- Toolbar Actions -->
+    <div class="text-gray-700">
+        Gerencie os teams da aplicação
+        <!-- Messages -->
+        <!-- Filters -->
+    </div>
+
+    <!-- Content -->
+    <div>
+        <form>
+            <!-- id = number-->
+            <div class="flex-auto">
+                <label class="mb-2 font-bold block" for="integeronly">Código</label>
+                <p-inputnumber inputId="integeronly" name="integeronly" [(ngModel)]="model.id"></p-inputnumber>
+            </div>
+
+            <!-- name = string-->
+            <!-- category = autocomplete (crud) -->
+            <!-- quantity = number -->
+            <!-- status = select -->
+        </form>
+    </div>
+
+</div>
